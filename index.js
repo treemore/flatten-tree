@@ -14,7 +14,7 @@ const _ = require('lodash');
  */
 function flattenNodeGenerator(node, parent, index, settings, stack) {
   const { itemsKey, idKey } = settings;
-
+  node.order_index = index
   return function flattenNode(list) {
     node = settings.initNode(node);
     node[idKey] = node[idKey] || settings.generateUniqueId();
